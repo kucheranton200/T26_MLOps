@@ -15,8 +15,8 @@ dist/
 *.key
 
 # Данные и модели (политика данных будет уточнена в ЛР2)
-data/*
-!data/.gitkeep
+# data/*
+# !data/.gitkeep
 models/
 *.pkl
 *.joblib
