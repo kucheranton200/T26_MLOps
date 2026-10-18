@@ -15,12 +15,13 @@ dist/
 *.key
 
 # Данные и модели (политика данных будет уточнена в ЛР2)
-# data/*
-# !data/.gitkeep
+data/raw/
+data/processed/
 models/
 *.pkl
 *.joblib
 *.onnx
+reports/
 
 # Редакторы и ОС
 .idea/
