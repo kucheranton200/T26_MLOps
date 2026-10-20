@@ -10,10 +10,10 @@
 
 | № | Что изменено | Issue | PR | Commit | Строки diff |
 |---|---|---|---|---|---|
-| 1 | Валидатор `src/mlops_project/validate_data.py` и модуль совместимости `src/mlops_flight_delay/validate_data.py`: полная валидация схемы, обязательности, типов (целочисленность), диапазонов, допустимых значений, дубликатов, расчет SHA-256 и генерация JSON-отчета | #37 | `<PR_ID>` | `<COMMIT_SHA>` | `src/mlops_project/validate_data.py`, `src/mlops_flight_delay/validate_data.py` |
-| 2 | Автотесты контракта данных `tests/test_data_contract.py`: позитивный тест на эталонном `data/flights_sample.csv` и комплексные негативные сценарии в `tmp_path` (выход за диапазон, недопустимое категориальное значение, отсутствие колонки, дубликаты, недостаток строк) | #37 | `<PR_ID>` | `<COMMIT_SHA>` | `tests/test_data_contract.py` |
-| 3 | Интеграция шага валидации данных в GitHub Actions CI `.github/workflows/ci.yml` перед запуском автотестов | #37 | `<PR_ID>` | `<COMMIT_SHA>` | `.github/workflows/ci.yml` |
-| 4 | Синхронизация контракта `data/contract.json` (диапазон ArrDelay, minimum_rows) и фиксация статуса задач в документации (`docs/plans/lr2-plan.md`, `docs/team-roles.md`) | #37 | `<PR_ID>` | `<COMMIT_SHA>` | `data/contract.json`, `docs/plans/lr2-plan.md`, `docs/team-roles.md` |
+| 1 | Валидатор `src/mlops_project/validate_data.py` и модуль совместимости `src/mlops_flight_delay/validate_data.py`: полная валидация схемы, обязательности, типов (целочисленность), диапазонов, допустимых значений, дубликатов, расчет SHA-256 и генерация JSON-отчета | #37 | #38 | [1d875a1](https://github.com/kucheranton200/T26_MLOps/commit/1d875a176d0d358bc9818e809648077db7b7457b) | `src/mlops_project/validate_data.py`, `src/mlops_flight_delay/validate_data.py` |
+| 2 | Автотесты контракта данных `tests/test_data_contract.py`: позитивный тест на эталонном `data/flights_sample.csv` и комплексные негативные сценарии в `tmp_path` (выход за диапазон, недопустимое категориальное значение, отсутствие колонки, дубликаты, недостаток строк) | #37 | #38 | [1d875a1](https://github.com/kucheranton200/T26_MLOps/commit/1d875a176d0d358bc9818e809648077db7b7457b) | `tests/test_data_contract.py` |
+| 3 | Интеграция шага валидации данных в GitHub Actions CI `.github/workflows/ci.yml` перед запуском автотестов | #37 | #38 | [1d875a1](https://github.com/kucheranton200/T26_MLOps/commit/1d875a176d0d358bc9818e809648077db7b7457b) | `.github/workflows/ci.yml` |
+| 4 | Синхронизация контракта `data/contract.json` (диапазон ArrDelay, minimum_rows) и фиксация статуса задач в документации (`docs/plans/lr2-plan.md`, `docs/team-roles.md`) | #37 | #38 | [1d875a1](https://github.com/kucheranton200/T26_MLOps/commit/1d875a176d0d358bc9818e809648077db7b7457b) | `data/contract.json`, `docs/plans/lr2-plan.md`, `docs/team-roles.md` |
 
 ## Проверка коллеги
 
