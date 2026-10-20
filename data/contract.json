@@ -17,6 +17,11 @@
             "type": "integer",
             "nullable": false,
             "allowed_values": [ 0, 1 ]
+        },
+        "ArrDelay": {
+            "role": "label",
+            "type": "integer",
+            "nullable": false
         }
     }
 }
