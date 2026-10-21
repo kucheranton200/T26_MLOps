@@ -23,7 +23,7 @@
 | План ЛР2 | @GlooshSl | docs/plans/lr2-plan.md | #18 | @kucheranton200, @Z0rko32 | ср 14.10 |
 | Контракт данных | @kerty0 | data/contract.json | #? | @Vikabh, @Z0rko32 | чт 15.10, 12:00 |
 | Карточка набора данных и раздел про разделение и утечку | @Vikabh | docs/data-card.md | #? | @kucheranton200, @kerty0 | чт 15.10, 14:00 |
-| Валидатор и шаг проверки данных в CI | @Z0rko32 | src/mlops_project/validate_data.py, .github/workflows/ci.yml | #? | @kerty0, @kucheranton200 | чт 15.10, 18:00 |
+| Валидатор и шаг проверки данных в CI | @Z0rko32 | src/mlops_project/validate_data.py, .github/workflows/ci.yml | #37 | @kerty0, @kucheranton200 | чт 15.10, 18:00 |
 | Тесты контракта (минимум два испорченных варианта) | @kerty0 | tests/test_data_contract.py | #? | @Z0rko32 | чт 15.10, 18:00 |
 | README и .gitignore | @kucheranton200 | README.md, .gitignore | #? | @GlooshSl, @Vikabh | чт 15.10, 21:00 |
 | Ревью всех PR (содержательное, с запуском проверок) | вся команда | - | - | - | чт 15.10, до 23:00 |
