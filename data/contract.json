@@ -1,0 +1,29 @@
+{
+  "contract_version": "1.0.0",
+  "dataset": "flight-delay-training-sample",
+  "minimum_rows": 20,
+  "allow_extra_columns": false,
+  "duplicate_rows": "forbid",
+  "columns": {
+    "DepHour": {
+      "role": "feature",
+      "type": "integer",
+      "nullable": false,
+      "minimum": 0,
+      "maximum": 23
+    },
+    "IsWeekend": {
+      "role": "feature",
+      "type": "integer",
+      "nullable": false,
+      "allowed_values": [0, 1]
+    },
+    "ArrDelay": {
+      "role": "target_source",
+      "type": "integer",
+      "nullable": false,
+      "minimum": -180,
+      "maximum": 1440
+    }
+  }
+}
