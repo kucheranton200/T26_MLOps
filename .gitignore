@@ -27,3 +27,8 @@ models/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# DVC
+.dvc/cache/
+.dvc/tmp/
+.dvc/config.local
