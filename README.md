@@ -83,9 +83,7 @@ python -m ruff check src tests
 
 ## Отчёты валидации
 
-Отчёты `reports/validation/*.json` не хранятся в Git (каталог `reports/` в `.gitignore`).
-Отчёт создаётся командой выше и сохраняется как артефакт CI. Воспроизвести его по tag
-`lr2-v1` можно запуском этой же команды.
+Отчёты `reports/validation/*.json` хранятся в Git. Отчёт создаётся командой выше и также сохраняется как артефакт CI. Воспроизвести его по tag `lr2-v1` можно запуском этой же команды.
 
 ## Какие данные нельзя добавлять в Git
 
@@ -99,7 +97,7 @@ python -m ruff check src tests
 .github/        шаблоны issue и PR, CI workflow
 data/           контракт данных и разрешённый образец (data/raw и data/processed не в Git)
 docs/           ADR, карточка данных, evidence cards, роли команды
-reports/        отчёты валидации (не в Git, создаются командой и в CI)
+reports/        отчёты валидации
 src/            исходный код пакета mlops_project
 tests/          тесты
 ```

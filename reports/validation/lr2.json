@@ -1,0 +1,67 @@
+{
+  "contract_version": "1.0.0",
+  "dataset": "flight-delay-training-sample",
+  "data_file": "data/flights_sample.csv",
+  "sha256": "a828de7d3c87377c9bd247ae97ffc59ad90aa39dd43fa376380381c572268cbe",
+  "rows": 24,
+  "columns": [
+    "DepHour",
+    "IsWeekend",
+    "ArrDelay"
+  ],
+  "passed": true,
+  "checks": {
+    "required_columns": {
+      "passed": true,
+      "details": "All 3 required columns present"
+    },
+    "no_extra_columns": {
+      "passed": true,
+      "details": "No unexpected extra columns"
+    },
+    "minimum_rows": {
+      "passed": true,
+      "details": "Row count 24 meets minimum of 20"
+    },
+    "no_duplicate_rows": {
+      "passed": true,
+      "details": "All 24 rows are unique"
+    },
+    "column_DepHour_nullability": {
+      "passed": true,
+      "details": "No null values"
+    },
+    "column_DepHour_type": {
+      "passed": true,
+      "details": "All values match type 'integer'"
+    },
+    "column_DepHour_range": {
+      "passed": true,
+      "details": "All values within [0, 23]"
+    },
+    "column_IsWeekend_nullability": {
+      "passed": true,
+      "details": "No null values"
+    },
+    "column_IsWeekend_type": {
+      "passed": true,
+      "details": "All values match type 'integer'"
+    },
+    "column_IsWeekend_allowed_values": {
+      "passed": true,
+      "details": "All values in [0, 1]"
+    },
+    "column_ArrDelay_nullability": {
+      "passed": true,
+      "details": "No null values"
+    },
+    "column_ArrDelay_type": {
+      "passed": true,
+      "details": "All values match type 'integer'"
+    },
+    "column_ArrDelay_range": {
+      "passed": true,
+      "details": "All values within [-180, 1440]"
+    }
+  }
+}

@@ -21,7 +21,6 @@ models/
 *.pkl
 *.joblib
 *.onnx
-reports/
 
 # Редакторы и ОС
 .idea/
