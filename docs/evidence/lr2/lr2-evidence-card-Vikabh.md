@@ -10,8 +10,8 @@
 
 | № | Что изменено | Issue | PR | Commit | Строки diff |
 | - | --- | - | - | - | --- |
-| 1 | **Документация датасета `docs/data-card.md`**: описание признаков `flights_sample.csv`, типов данных, диапазонов, правил предотвращения утечек данных (Data Leakage) | [#27](https://github.com/kucheranton200/T26_MLOps/issues/27) | [#26](https://github.com/kucheranton200/T26_MLOps/pull/26) | `main` | [`docs/data-card.md`](https://github.com/kucheranton200/T26_MLOps/blob/main/docs/data-card.md) |
-| 2 | **Персональная эвиденс-карточка `docs/evidence/lr2/lr2-evidence-card-Vikabh.md`**: подведение итогов роли Data steward, фиксация воспроизводимости, метрик валидатора и ревью | [#29](https://github.com/kucheranton200/T26_MLOps/issues/29) | [#34](https://github.com/kucheranton200/T26_MLOps/pull/34) | `main` | [`docs/evidence/lr2/lr2-evidence-card-Vikabh.md`](https://github.com/kucheranton200/T26_MLOps/blob/main/docs/evidence/lr2/lr2-evidence-card-Vikabh.md) |
+| 1 | **Документация датасета `docs/data-card.md`**: описание признаков `flights_sample.csv`, типов данных, диапазонов, правил предотвращения утечек данных (Data Leakage) | [#27](https://github.com/kucheranton200/T26_MLOps/issues/27) | [#26](https://github.com/kucheranton200/T26_MLOps/pull/26) | [`da2e9e7`](https://github.com/kucheranton200/T26_MLOps/commit/da2e9e7a4798f9ad34ad00dbf951c564649705b0) | [`docs/data-card.md`](https://github.com/kucheranton200/T26_MLOps/blob/main/docs/data-card.md) |
+| 2 | **Персональная эвиденс-карточка `docs/evidence/lr2/lr2-evidence-card-Vikabh.md`**: подведение итогов роли Data steward, фиксация воспроизводимости, метрик валидатора и ревью | [#29](https://github.com/kucheranton200/T26_MLOps/issues/29) | [#34](https://github.com/kucheranton200/T26_MLOps/pull/34) | [`7af0b8f`](https://github.com/kucheranton200/T26_MLOps/commit/7af0b8f6f1b2e1d2d42f6dc8c32e7622136453ef) | [`docs/evidence/lr2/lr2-evidence-card-Vikabh.md`](https://github.com/kucheranton200/T26_MLOps/blob/main/docs/evidence/lr2/lr2-evidence-card-Vikabh.md) |
 
 ## Проверка коллеги
 
