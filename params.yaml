@@ -1,0 +1,44 @@
+prepare:
+  input_data: data/flights_sample.csv
+  output_data: data/processed/flights_processed.csv
+  target_col: ArrDelay
+  target_threshold: 15          # label = 1 if ArrDelay > threshold
+  feature_cols:
+    - DepHour
+    - IsWeekend
+  drop_duplicates: true
+
+split:
+  input_data: data/processed/flights_processed.csv
+  train_path: data/split/X_train.csv
+  test_path: data/split/X_test.csv
+  train_labels: data/split/y_train.csv
+  test_labels: data/split/y_test.csv
+  scaler_path: models/scaler.pkl
+  test_size: 0.2
+  random_state: 42
+  stratify: true
+
+train:
+  X_train: data/split/X_train.csv
+  y_train: data/split/y_train.csv
+  model_path: models/model.pkl
+  model_type: logistic_regression   # logistic_regression | random_forest
+  random_state: 42
+  # LogisticRegression params
+  C: 1.0
+  max_iter: 1000
+  # RandomForest params (used when model_type = random_forest)
+  n_estimators: 100
+
+evaluate:
+  X_test: data/split/X_test.csv
+  y_test: data/split/y_test.csv
+  model_path: models/model.pkl
+  metrics_path: reports/metrics.json
+  threshold: 0.5                    # probability cut-off for binary label
+
+validate:
+  data_path: data/flights_sample.csv
+  contract_path: data/contract.json
+  report_path: reports/validation/lr3.json

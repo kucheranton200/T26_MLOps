@@ -1,0 +1,167 @@
+schema: '2.0'
+stages:
+  validate:
+    cmd: python -m mlops_project.validate_data --data data/flights_sample.csv 
+      --contract data/contract.json --report reports/validation/lr3.json
+    deps:
+    - path: data/contract.json
+      hash: md5
+      md5: e9f4d94575df056ef8bfa9636aea8f81
+      size: 604
+    - path: data/flights_sample.csv
+      hash: md5
+      md5: 10dc0a0d72cc6cc3795e536296e7eb24
+      size: 214
+    - path: src/mlops_project/validate_data.py
+      hash: md5
+      md5: 73d9d1a418fb66f5bf9797741c537a1d
+      size: 10526
+    params:
+      params.yaml:
+        validate:
+          data_path: data/flights_sample.csv
+          contract_path: data/contract.json
+          report_path: reports/validation/lr3.json
+    outs:
+    - path: reports/validation/lr3.json
+      hash: md5
+      md5: a6e0494d08080156174c515ca5d3804d
+      size: 1745
+  preprocess:
+    cmd: python -m mlops_project.preprocess --config params.yaml
+    deps:
+    - path: data/flights_sample.csv
+      hash: md5
+      md5: 10dc0a0d72cc6cc3795e536296e7eb24
+      size: 214
+    - path: src/mlops_project/preprocess.py
+      hash: md5
+      md5: 87a68a7d0729e0de8a378165c37e47d7
+      size: 4033
+    params:
+      params.yaml:
+        prepare:
+          input_data: data/flights_sample.csv
+          output_data: data/processed/flights_processed.csv
+          target_col: ArrDelay
+          target_threshold: 15
+          feature_cols:
+          - DepHour
+          - IsWeekend
+          drop_duplicates: true
+    outs:
+    - path: data/processed/flights_processed.csv
+      hash: md5
+      md5: 5d6d2b579a8791e43b32dc5dc93c3392
+      size: 209
+    - path: data/processed/preprocess_summary.json
+      hash: md5
+      md5: 9f5b105a8e3addd36fafed181c7a7b1a
+      size: 264
+  split:
+    cmd: python -m mlops_project.split_data --config params.yaml
+    deps:
+    - path: data/processed/flights_processed.csv
+      hash: md5
+      md5: 5d6d2b579a8791e43b32dc5dc93c3392
+      size: 209
+    - path: src/mlops_project/split_data.py
+      hash: md5
+      md5: 167ebc39e6d72737b36c5caf0ee78755
+      size: 5947
+    params:
+      params.yaml:
+        split:
+          input_data: data/processed/flights_processed.csv
+          train_path: data/split/X_train.csv
+          test_path: data/split/X_test.csv
+          train_labels: data/split/y_train.csv
+          test_labels: data/split/y_test.csv
+          scaler_path: models/scaler.pkl
+          test_size: 0.2
+          random_state: 42
+          stratify: true
+    outs:
+    - path: data/split/X_test.csv
+      hash: md5
+      md5: 25e2939adabb533af422f30e4fd407d2
+      size: 220
+    - path: data/split/X_train.csv
+      hash: md5
+      md5: ef5b616c543ef5c1953f5807b71cd936
+      size: 788
+    - path: data/split/y_test.csv
+      hash: md5
+      md5: 39e20eb3c8b00d9f5adfb4e85c3cc1a0
+      size: 22
+    - path: data/split/y_train.csv
+      hash: md5
+      md5: 81d4db4faabdc095d32acb5795563c89
+      size: 64
+    - path: models/scaler.pkl
+      hash: md5
+      md5: 738e221f70d1be940b81bc0fce1955ab
+      size: 464
+  train:
+    cmd: python -m mlops_project.train --config params.yaml
+    deps:
+    - path: data/split/X_train.csv
+      hash: md5
+      md5: ef5b616c543ef5c1953f5807b71cd936
+      size: 788
+    - path: data/split/y_train.csv
+      hash: md5
+      md5: 81d4db4faabdc095d32acb5795563c89
+      size: 64
+    - path: src/mlops_project/train.py
+      hash: md5
+      md5: 5bdbcdc199a8b693ecf63432f1850b38
+      size: 3239
+    params:
+      params.yaml:
+        train:
+          X_train: data/split/X_train.csv
+          y_train: data/split/y_train.csv
+          model_path: models/model.pkl
+          model_type: logistic_regression
+          random_state: 42
+          C: 1.0
+          max_iter: 1000
+          n_estimators: 100
+    outs:
+    - path: models/model.pkl
+      hash: md5
+      md5: 06ed82dd3097d8f97aca6d8eb9ed085a
+      size: 722
+  evaluate:
+    cmd: python -m mlops_project.evaluate --config params.yaml
+    deps:
+    - path: data/split/X_test.csv
+      hash: md5
+      md5: 25e2939adabb533af422f30e4fd407d2
+      size: 220
+    - path: data/split/y_test.csv
+      hash: md5
+      md5: 39e20eb3c8b00d9f5adfb4e85c3cc1a0
+      size: 22
+    - path: models/model.pkl
+      hash: md5
+      md5: 06ed82dd3097d8f97aca6d8eb9ed085a
+      size: 722
+    - path: src/mlops_project/evaluate.py
+      hash: md5
+      md5: d579c022a8f3851b08cbfc145587024e
+      size: 4510
+    params:
+      params.yaml:
+        evaluate:
+          X_test: data/split/X_test.csv
+          y_test: data/split/y_test.csv
+          model_path: models/model.pkl
+          metrics_path: reports/metrics.json
+          threshold: 0.5
+    outs:
+    - path: reports/metrics.json
+      hash: md5
+      md5: a13506e786b4d38f504f339bae9976b7
+      size: 128

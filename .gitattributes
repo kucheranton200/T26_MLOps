@@ -1,0 +1,17 @@
+# Normalise line endings to LF in the repository
+* text=auto eol=lf
+
+# Binary files – no EOL conversion
+*.pkl binary
+*.joblib binary
+*.onnx binary
+*.csv binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.whl binary
+*.zip binary
+*.gz binary
+*.tar binary
