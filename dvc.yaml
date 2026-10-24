@@ -1,0 +1,71 @@
+stages:
+  validate:
+    cmd: >-
+      python -m mlops_project.validate_data
+      --data data/flights_sample.csv
+      --contract data/contract.json
+      --report reports/validation/lr3.json
+    deps:
+      - src/mlops_project/validate_data.py
+      - data/flights_sample.csv
+      - data/contract.json
+    params:
+      - params.yaml:
+          - validate
+    outs:
+      - reports/validation/lr3.json:
+          cache: false
+
+  preprocess:
+    cmd: python -m mlops_project.preprocess --config params.yaml
+    deps:
+      - src/mlops_project/preprocess.py
+      - data/flights_sample.csv
+    params:
+      - params.yaml:
+          - prepare
+    outs:
+      - data/processed/flights_processed.csv
+      - data/processed/preprocess_summary.json:
+          cache: false
+
+  split:
+    cmd: python -m mlops_project.split_data --config params.yaml
+    deps:
+      - src/mlops_project/split_data.py
+      - data/processed/flights_processed.csv
+    params:
+      - params.yaml:
+          - split
+    outs:
+      - data/split/X_train.csv
+      - data/split/X_test.csv
+      - data/split/y_train.csv
+      - data/split/y_test.csv
+      - models/scaler.pkl
+
+  train:
+    cmd: python -m mlops_project.train --config params.yaml
+    deps:
+      - src/mlops_project/train.py
+      - data/split/X_train.csv
+      - data/split/y_train.csv
+    params:
+      - params.yaml:
+          - train
+    outs:
+      - models/model.pkl
+
+  evaluate:
+    cmd: python -m mlops_project.evaluate --config params.yaml
+    deps:
+      - src/mlops_project/evaluate.py
+      - data/split/X_test.csv
+      - data/split/y_test.csv
+      - models/model.pkl
+    params:
+      - params.yaml:
+          - evaluate
+    metrics:
+      - reports/metrics.json:
+          cache: false

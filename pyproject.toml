@@ -8,7 +8,12 @@ version = "0.1.0"
 description = "Учебный ML-проект команды 2 (курс MLOps)"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "dvc>=3.0.0",
+    "numpy>=1.26.0",
+    "pyyaml>=6.0",
+    "scikit-learn>=1.4.0",
+]
 
 [project.optional-dependencies]
 dev = [
