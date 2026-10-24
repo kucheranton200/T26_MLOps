@@ -67,8 +67,8 @@ stages:
       size: 209
     - path: src/mlops_project/split_data.py
       hash: md5
-      md5: 167ebc39e6d72737b36c5caf0ee78755
-      size: 5947
+      md5: 4e01d996a56a0fcabb82436e9abc23a2
+      size: 5903
     params:
       params.yaml:
         split:
@@ -115,8 +115,8 @@ stages:
       size: 64
     - path: src/mlops_project/train.py
       hash: md5
-      md5: 5bdbcdc199a8b693ecf63432f1850b38
-      size: 3239
+      md5: 83ce3a700a0c5047327626d7d8696685
+      size: 3191
     params:
       params.yaml:
         train:
@@ -150,8 +150,8 @@ stages:
       size: 722
     - path: src/mlops_project/evaluate.py
       hash: md5
-      md5: d579c022a8f3851b08cbfc145587024e
-      size: 4510
+      md5: 9474f415b4cc64759ccf1439f954547d
+      size: 4482
     params:
       params.yaml:
         evaluate:
