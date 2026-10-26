@@ -37,7 +37,7 @@
 | Разделение train и test (стратификация, random_state=42, масштабирование только на train) | @Z0rko32 | src/mlops_project/split_data.py | #? | @Vikabh, @kerty0 | ср 21.10, 12:00 |
 | Тесты стадий (в том числе против утечки: `ArrDelay` не в признаках) | @Z0rko32 | tests/test_pipeline.py | #? | @Vikabh | ср 21.10, 12:00 |
 | Конвейер: dvc.yaml и dvc.lock (после слияния скриптов) | @kerty0 | dvc.yaml, dvc.lock | #? | @Z0rko32 | ср 21.10, 18:00 |
-| Шаг `dvc repro` в CI | @kucheranton200 | .github/workflows/ci.yml | #? | @Z0rko32 | ср 21.10, 21:00 |
+| Шаг `dvc repro` в CI | @kucheranton200 | .github/workflows/ci.yml | #53 | @Z0rko32 | ср 21.10, 21:00 |
 | Раздел про DVC в карточке данных: версионирование, обновление, риски, ревью утечки | @Vikabh | docs/data-card.md | #? | @kucheranton200 | чт 22.10, 12:00 |
 | README: установка DVC, `dvc repro`, команды для Windows | @kerty0 | README.md | #? | @Vikabh | чт 22.10, 12:00 |
 | Релизная записка ЛР3 | @GlooshSl | docs/releases/lr3-v1.md | #? | @kucheranton200 | чт 22.10, 22:00 (черновик), пт 23.10, 10:00 (итог) |
