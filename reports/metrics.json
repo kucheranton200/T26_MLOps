@@ -1,0 +1,8 @@
+{
+  "roc_auc": 0.666667,
+  "f1": 0.5,
+  "brier_score": 0.228108,
+  "accuracy": 0.6,
+  "n_test": 5,
+  "threshold": 0.5
+}
