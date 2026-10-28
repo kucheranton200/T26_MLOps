@@ -50,7 +50,16 @@ python -m pytest -q
 python -m dvc repro
 ```
 
-Ожидаемый вывод: `mlops project is ready`.
+Создаст:
+```bash
+# validate ──→ preprocess ──→ split ──→ train ──→ evaluate
+#     │            │            │         │          │
+#  lr3.json   processed.csv  X_train  model.pkl  metrics.json
+#                            X_test
+#                            y_train
+#                            y_test
+#                            scaler.pkl
+```
 
 ## Данные и проверка качества
 
