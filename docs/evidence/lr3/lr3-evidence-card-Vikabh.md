@@ -15,8 +15,8 @@
 | Артефакт / Задача | Путь | Назначение |
 |---|---|---|
 | Разработка карточки данных (Data Card) | `docs/data-card.md` | Полное описание датасета `flights_sample.csv`, его структуры, типов данных, целевой переменной `ArrDelay > 15` и ограничений |
-| Проведение Risk & Quality Review (PR #52) | GitHub PR #52 | Проверка скриптов DVC-конвейера Радиона на отсутствие утечек данных (Data Leakage) и детерминизм |
-| Проведение Documentation Review (PR #56) | GitHub PR #56 | Проверка инструкций Ивана по воспроизведению пайплайна (`dvc repro` / `dvc status`) и документации |
+| Проведение Risk & Quality Review (PR #52) | GitHub PR #52 | Проверка скриптов DVC-конвейера @Z0rko32 на отсутствие утечек данных (Data Leakage) и детерминизм |
+| Проведение Documentation Review (PR #56) | GitHub PR #56 | Проверка инструкций @kerty0 по воспроизведению пайплайна (`dvc repro` / `dvc status`) и документации |
 | Личная evidence-card | `docs/evidence/lr3/lr3-evidence-card-Vikabh.md` | Фиксация результатов роли Data steward, ссылок на выполненные задачи, ревью и анализ рисков |
 
 ---
