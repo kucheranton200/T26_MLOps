@@ -25,8 +25,8 @@ stages:
     outs:
     - path: reports/validation/lr3.json
       hash: md5
-      md5: a6e0494d08080156174c515ca5d3804d
-      size: 1745
+      md5: 9dd0e7fe9662038270e52e8a92f76121
+      size: 1679
   preprocess:
     cmd: python -m mlops_project.preprocess --config params.yaml
     deps:
@@ -56,8 +56,8 @@ stages:
       size: 209
     - path: data/processed/preprocess_summary.json
       hash: md5
-      md5: 9f5b105a8e3addd36fafed181c7a7b1a
-      size: 264
+      md5: 927f215876e1d16831986608a1317529
+      size: 250
   split:
     cmd: python -m mlops_project.split_data --config params.yaml
     deps:
@@ -100,8 +100,8 @@ stages:
       size: 64
     - path: models/scaler.pkl
       hash: md5
-      md5: 738e221f70d1be940b81bc0fce1955ab
-      size: 464
+      md5: 52a25785ccac4a8006b216126093c51a
+      size: 456
   train:
     cmd: python -m mlops_project.train --config params.yaml
     deps:
@@ -131,8 +131,8 @@ stages:
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: 06ed82dd3097d8f97aca6d8eb9ed085a
-      size: 722
+      md5: cd957d0458f06fb778bea6ada76dbcb7
+      size: 684
   evaluate:
     cmd: python -m mlops_project.evaluate --config params.yaml
     deps:
@@ -146,8 +146,8 @@ stages:
       size: 22
     - path: models/model.pkl
       hash: md5
-      md5: 06ed82dd3097d8f97aca6d8eb9ed085a
-      size: 722
+      md5: cd957d0458f06fb778bea6ada76dbcb7
+      size: 684
     - path: src/mlops_project/evaluate.py
       hash: md5
       md5: 9474f415b4cc64759ccf1439f954547d
@@ -163,5 +163,5 @@ stages:
     outs:
     - path: reports/metrics.json
       hash: md5
-      md5: a13506e786b4d38f504f339bae9976b7
-      size: 128
+      md5: 92141284279cf3456dd9ad8c9dc974b9
+      size: 120

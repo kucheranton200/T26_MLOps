@@ -44,10 +44,10 @@ python -m ruff check .
 python -m pytest -q
 ```
 
-## Запуск
+## Воспроизведение
 
 ```bash
-python -m mlops_project
+python -m dvc repro
 ```
 
 Ожидаемый вывод: `mlops project is ready`.
