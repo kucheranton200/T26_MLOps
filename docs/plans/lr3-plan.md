@@ -31,20 +31,20 @@
 | Задача | Ответственный | Файлы | Issue | Ревью | Срок |
 |---|---|---|---|---|---|
 | План ЛР3 | @GlooshSl | docs/plans/lr3-plan.md | #30 | @kucheranton200, @Z0rko32 | пн 19.10 |
-| Инициализация DVC (`dvc init`), решение по исходному файлу данных, .gitignore и .dvcignore | @kucheranton200 | .dvc/, .dvcignore, .gitignore | #? | @kerty0 | вт 20.10, 12:00 |
-| Зависимость dvc в проекте и params.yaml | @kerty0 | pyproject.toml, params.yaml | #? | @kucheranton200 | вт 20.10, 12:00 |
-| Предобработка: очистка, целевая переменная `ArrDelay > 15` | @Z0rko32 | src/mlops_project/preprocess.py | #? | @Vikabh, @kerty0 | вт 20.10, 20:00 |
-| Разделение train и test (стратификация, random_state=42, масштабирование только на train) | @Z0rko32 | src/mlops_project/split_data.py | #? | @Vikabh, @kerty0 | ср 21.10, 12:00 |
-| Тесты стадий (в том числе против утечки: `ArrDelay` не в признаках) | @Z0rko32 | tests/test_pipeline.py | #? | @Vikabh | ср 21.10, 12:00 |
-| Конвейер: dvc.yaml и dvc.lock (после слияния скриптов) | @kerty0 | dvc.yaml, dvc.lock | #? | @Z0rko32 | ср 21.10, 18:00 |
+| Инициализация DVC (`dvc init`), решение по исходному файлу данных, .gitignore и .dvcignore | @kucheranton200 | .dvc/, .dvcignore, .gitignore | #47 | @kerty0 | вт 20.10, 12:00 |
+| Зависимость dvc в проекте и params.yaml | @kerty0 | pyproject.toml, params.yaml | - (в составе #51) | @kucheranton200 | вт 20.10, 12:00 |
+| Предобработка: очистка, целевая переменная `ArrDelay > 15` | @Z0rko32 | src/mlops_project/preprocess.py | #51 | @Vikabh, @kerty0 | вт 20.10, 20:00 |
+| Разделение train и test (стратификация, random_state=42, масштабирование только на train) | @Z0rko32 | src/mlops_project/split_data.py | #51 | @Vikabh, @kerty0 | ср 21.10, 12:00 |
+| Тесты стадий (в том числе против утечки: `ArrDelay` не в признаках) | @Z0rko32 | tests/test_pipeline.py | #51 | @Vikabh | ср 21.10, 12:00 |
+| Конвейер: dvc.yaml и dvc.lock (после слияния скриптов) | @kerty0 | dvc.yaml, dvc.lock | - (в составе #51) | @Z0rko32 | ср 21.10, 18:00 |
 | Шаг `dvc repro` в CI | @kucheranton200 | .github/workflows/ci.yml | #53 | @Z0rko32 | ср 21.10, 21:00 |
-| Раздел про DVC в карточке данных: версионирование, обновление, риски, ревью утечки | @Vikabh | docs/data-card.md | #? | @kucheranton200 | чт 22.10, 12:00 |
-| README: установка DVC, `dvc repro`, команды для Windows | @kerty0 | README.md | #? | @Vikabh | чт 22.10, 12:00 |
-| Релизная записка ЛР3 | @GlooshSl | docs/releases/lr3-v1.md | #? | @kucheranton200 | чт 22.10, 22:00 (черновик), пт 23.10, 10:00 (итог) |
+| Раздел про DVC в карточке данных: версионирование, обновление, риски, ревью утечки | @Vikabh | docs/data-card.md | #49 | @kucheranton200 | чт 22.10, 12:00 |
+| README: установка DVC, `dvc repro`, команды для Windows | @kerty0 | README.md | #55 | @Vikabh | чт 22.10, 12:00 |
+| Релизная записка ЛР3 | @GlooshSl | docs/releases/lr3-v1.md | #60 | @kucheranton200 | чт 22.10, 22:00 (черновик), пт 23.10, 10:00 (итог) |
 | Ревью всех PR (содержательное, с запуском проверок) | вся команда | - | - | - | чт 22.10, до 18:00 |
-| Tag lr3-v1 и Release | @GlooshSl | - | #? | - | пт 23.10, 09:30 |
+| Tag lr3-v1 и Release | @GlooshSl | - | #60 | - | пт 23.10, 09:30 |
 | Проверка по тегу на чистом клоне: `dvc repro` с нуля | @kucheranton200 | - | - | - | пт 23.10, 10:30 |
-| Evidence card каждого участника | каждый свою | docs/evidence/lr3-<логин>.md | #? | - | пт 23.10, 13:00 |
+| Evidence card каждого участника | каждый свою | docs/evidence/lr3-<логин>.md | - | - | пт 23.10, 13:00 |
 | Ссылки в ДО.СКИФ | по правилам команды | - | - | - | пт 23.10, до 14:00 |
 
 ## Договорённости по интерфейсу (чтобы работать параллельно)
@@ -108,3 +108,5 @@
 |---|---|---|---|---|---|
 | 2026-10-24 | Конвейер: dvc.yaml и dvc.lock | @kerty0, ср 21.10 | @Z0rko32, 24.10 | @kerty0 не успел; @Z0rko32 реализовал полный конвейер (скрипты + dvc.yaml + dvc.lock + params.yaml) в рамках одного PR | @Z0rko32 |
 | 2026-10-24 | Стадии train и evaluate | Не входило в ЛР3 по плану | Добавлены как baseline | Для полноты воспроизводимого конвейера и демонстрации метрик; стадии опциональны, но полезны | @Z0rko32 |
+| 2026-10-31 | Зависимость dvc в проекте и params.yaml | @kerty0, вт 20.10 | @Z0rko32, в составе PR #52 (issue #51) | Задача вошла в PR конвейера: зависимости и `params.yaml` лежат в ветке этого PR; отдельной issue не создавалось | зафиксировано координатором по истории PR |
+| 2026-10-31 | Релизная записка, evidence card, tag lr3-v1 и Release | пт 23.10 (записка до 10:00, тег 09:30, карточка до 13:00) | сб 31.10, issue #60 | Срок сдачи пропущен; записка, проверка воспроизводимости и тег выполнены после срока | @GlooshSl |
