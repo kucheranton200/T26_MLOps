@@ -19,3 +19,9 @@
 | Бахарева Виктория | @Vikabh | Data steward + Leakage reviewer | #27, #29 | docs/data-card.md, docs/evidence/lr2/lr2-evidence-card-Vikabh.md |
 | Кабаков Григорий | @kerty0 | Contract engineer | #24 | data/contract.json |
 | Кныш Радион | @Z0rko32 | Quality engineer | #37 | src/mlops_project/validate_data.py, tests/test_data_contract.py, docs/evidence/lr2/lr2-evidence-card-Z0rko32.md |
+
+# Роли команды в ЛР4
+
+| Участник | GitHub login | Роль в ЛР4 | Issue | Личный артефакт |
+|---|---|---|---|---|
+| Кныш Радион | @Z0rko32 | Quality engineer | #72 | src/mlops_project/students/, tests/test_students_pipeline.py, tests/test_students_train.py, docs/evidence/lr4/lr4-evidence-card-Z0rko32.md |
