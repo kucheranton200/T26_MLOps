@@ -138,3 +138,19 @@ def test_split_is_deterministic_with_same_seed(tmp_path: Path, students_csv: Pat
     x_tr2, _, _, _ = split_data(params2)
 
     assert x_tr1.read_text(encoding="utf-8") == x_tr2.read_text(encoding="utf-8")
+
+
+def test_preprocess_and_split_cli(tmp_path: Path, students_csv: Path) -> None:
+    import yaml
+
+    from mlops_project.students.preprocess import main as preprocess_main
+    from mlops_project.students.split_data import main as split_main
+
+    params = _make_params(tmp_path, students_csv, config="early")
+    config_path = tmp_path / "params.yaml"
+    config_path.write_text(yaml.safe_dump(params), encoding="utf-8")
+
+    assert preprocess_main(["--config", str(config_path)]) == 0
+    assert split_main(["--config", str(config_path)]) == 0
+    assert Path(params["split"]["train_path"]).exists()
+    assert Path(params["split"]["test_path"]).exists()

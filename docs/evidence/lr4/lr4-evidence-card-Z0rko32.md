@@ -5,7 +5,7 @@
 **Репозиторий:** https://github.com/kucheranton200/T26_MLOps  
 **Ветка:** `lab4/quality-zorko32`  
 **Базовый коммит main:** `89e9b3c`  
-**Issue / PR:** [#72](https://github.com/kucheranton200/T26_MLOps/issues/72)  
+**Issue / PR:** [#72](https://github.com/kucheranton200/T26_MLOps/issues/72) / [PR #73](https://github.com/kucheranton200/T26_MLOps/pull/73)  
 **Тег:** `lr4-v1` _(ставится после слияния всех PR по ЛР4)_
 
 ---
